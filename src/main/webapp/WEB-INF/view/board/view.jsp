@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<c:import url="/WEB-INF/fragment/navbar.jsp"></c:import>
+
 <h3>${board.id}</h3>
 <div>
     제목
@@ -21,6 +23,14 @@
 <div>
     작성일시
     <input type="datetime-local" value="${board.inserted}" readonly>
+</div>
+
+<div>
+    <form action="/delete" method="post">
+        <input type="hidden" name="id" value="${board.id}">
+        <button>삭제</button>
+    </form>
+
 </div>
 
 </body>
