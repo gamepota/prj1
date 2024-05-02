@@ -21,6 +21,16 @@
                         글쓰기
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/member/list" class="nav-link">
+                        회원 목록
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/signup" class="nav-link">
+                        회원가입
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
