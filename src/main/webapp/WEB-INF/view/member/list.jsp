@@ -28,10 +28,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${memeberList}" var="member">
+                    <c:forEach items="${memberList}" var="member">
                         <tr>
                             <td>${member.id}</td>
-                            <td>${member.email}</td>
+                            <td>
+                                <a href="/member?id=${member.id}">
+                                        ${member.email}
+                                </a>
+                            </td>
                             <td>${member.password}</td>
                             <td>${member.nickName}</td>
                             <td>${member.inserted}</td>

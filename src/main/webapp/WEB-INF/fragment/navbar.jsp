@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/signup" class="nav-link">
+                    <a href="/member/signup" class="nav-link">
                         회원가입
                     </a>
                 </li>
