@@ -11,6 +11,7 @@
 <body>
 
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
@@ -29,12 +30,15 @@
                     <label for="inputPassword" class="form-label">암호</label>
                     <input oninput="passwordCheck()" id="inputPassword" type="password" class="form-control"
                            name="password"
-                           value="${member.password}">
+                           value="">
+                    <div class="form-text">
+                        암호를 입력하지 않으면 기존 암호로 유지됩니다.
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputPasswordCheck" class="form-label">암호</label>
+                    <label for="inputPasswordCheck" class="form-label">암호 확인</label>
                     <input oninput="passwordCheck()" id="inputPasswordCheck" type="password" class="form-control"
-                           value="${member.password}">
+                           value="">
                     <div id="passwordMessage" class="form-text"></div>
                 </div>
                 <div class="mb-3">
@@ -63,7 +67,6 @@
         }
     }
 </script>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
         integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="

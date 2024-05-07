@@ -23,5 +23,52 @@ CREATE TABLE member
 ALTER TABLE member
     ADD COLUMN inserted DATETIME NOT NULL DEFAULT NOW();
 
+# 페이징용..(게시물 복사해서 갯수 늘리기)
+INSERT INTO board
+    (title, content, writer)
+SELECT title, content, writer
+FROM board;
+
+SELECT COUNT(id)
+FROM board;
+
+# board 테이블 수정
+# writer 컬럼 지우기
+# member_id INT REFERENCES member(id) 컬럼 추가
+
+ALTER TABLE board
+    DROP COLUMN writer;
+ALTER TABLE board
+    ADD COLUMN member_id INT REFERENCES member (id);
+UPDATE board
+SET member_id = 7
+WHERE id > 0;
+
+SELECT *
+FROM board
+LIMIT 3;
 SELECT *
 FROM member;
+
+
+SELECT *
+FROM member;
+
+DESC member;
+
+create table authority
+(
+    id        INT AUTO_INCREMENT PRIMARY KEY,
+    member_id INT         NOT NULL REFERENCES member (id),
+    name      VARCHAR(20) NOT NULL
+);
+INSERT INTO authority
+    (member_id, name)
+VALUES (8, 'admin');
+
+SELECT *
+FROM member m
+         LEFT JOIN authority a ON m.id = a.member_id;
+
+
+

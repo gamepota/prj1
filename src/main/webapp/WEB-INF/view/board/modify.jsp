@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
           integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
 </head>
 <body>
-<c:import url="/WEB-INF/fragment/navbar.jsp"></c:import>
+<c:import url="/WEB-INF/fragment/navbar.jsp"/>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -34,13 +35,7 @@
                     <textarea class="form-control" id="textareaContent" cols="30" rows="10" name="content"
                               required>${board.content}</textarea>
                 </div>
-                <div class="mb-3">
-                    <label for="inputWriter" class="form-label">
-                        작성자
-                    </label>
-                    <input id="inputWriter" class="form-control" type="text" value="${board.writer}" name="writer"
-                           required>
-                </div>
+
                 <div class="mb-3">
                     <button class="btn btn-secondary">수정</button>
                 </div>

@@ -17,7 +17,7 @@ public interface MemberMapper {
     @Select("""
             SELECT *
             FROM member
-            ORDER BY id DESC 
+            ORDER BY id DESC
             """)
     List<Member> selectAll();
 
@@ -31,7 +31,7 @@ public interface MemberMapper {
     @Delete("""
             DELETE FROM member
             WHERE id = #{id}
-             """)
+            """)
     int deleteById(Integer id);
 
     @Update("""
@@ -42,10 +42,17 @@ public interface MemberMapper {
             """)
     int update(Member member);
 
-
     @Select("""
             SELECT * FROM member
             WHERE email = #{email}
             """)
     Member selectByEmail(String email);
+
+    @Select("""
+            SELECT name
+            FROM authority
+            WHERE member_id = #{memberId}
+            """)
+    List<String> selectAuthorityByMemberId(Integer memberId);
 }
+
